@@ -1,0 +1,22 @@
+# In MIPS, memory is addressed in bytes of 4. That is, each index is a multiple of 4
+#
+# address = i4
+#
+#
+# To Access:
+#   A[3]
+#
+# You would write:
+
+lw $t0,12($s3) # lw = "load word" - index 3 x 4 = 12, and $s3 is base address (given at runtime)
+
+# Example:
+#   A[12] = h + A[8]
+#
+
+lw  $t0,32($s3)
+add $t0,$s2,$t0
+sw  $t0,48($s3)
+
+# COMMAND: Add Immediate
+addi $s3,$s3,4  # immediately adds constant 4 to s3 (no need to load)
