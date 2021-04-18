@@ -1,0 +1,38 @@
+2's compliment
+##############
+A way to represent negative and positive numbers with relative ease.
+alternative to signed digit, which had some drawbacks (such as a positive and negative 0)
+
+0000 0011 = 3
+0000 0010 = 2
+0000 0001 = 1
+0000 0000 = 0
+1111 1110 = -1
+1111 1101 = -2
+1111 1100 = -3
+...
+1000 0001 = -1,023
+1000 0000 = -1,024
+
+How to translate negatives in 2's compliment?
+---------------------------------------------
+
+If the most significant diget is 1 (left-most):
+
+  1101 1001
+  
+AND the value
+
+  1101 1001
+          ^
+  0010 0110
+
+Convert and add 1
+
+  0010 0110 = 38 + 1 = 39
+  
+Add negative
+  -39
+  
+(you can do this to negate negative to pos as well)
+
