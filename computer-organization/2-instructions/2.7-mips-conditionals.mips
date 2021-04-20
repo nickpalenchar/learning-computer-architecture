@@ -1,0 +1,17 @@
+
+# branch if equals and branch if not equal (beq, bne)
+
+# EXAMPLE: write
+#  if (i == j) f = g + h; else f = g – h;
+#  assume
+#    $s1 <- i
+#    $s2 <- j
+#    $s3 <- f
+#    $s4 <- g
+#    $s5 <- h
+
+bne $s1,$s2,Else
+add $s3,$s4,$s5
+j Exit
+Else:sub $s3,$s4,$s5
+Exit:
