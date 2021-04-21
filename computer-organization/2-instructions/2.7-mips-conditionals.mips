@@ -15,3 +15,34 @@ add $s3,$s4,$s5
 j Exit
 Else:sub $s3,$s4,$s5
 Exit:
+
+
+# EXAMPLE: 
+#  while (save[i] == k)
+    i += 1;
+#
+# assume
+#    $s3 <- i
+#    $s5 <- k
+#    $s6 <- save (base)
+
+Loop:sll $t1,$s3,2  # sll by 2 multiplies by 2^2, or 4.
+add $t1,$t1,$6  # add base of array to get correct offset
+lw $t0,0($t1)
+bne $t0,$s5, Exit
+addi $s3,$s3,1
+j Loop
+Exit:
+
+
+### LESS THAN or equals
+
+slt a,b,c sets a to 1 if b < c, otherwise 0
+slti a,b,C (for a constant)
+sltu a,b,c - like slt, but with unsigned (if using on signed, this IMPLICITLY means 0 < b < c)
+
+sltu $t0,$s1,$t2
+beq $t0,$zero,IndexError
+j Exit
+IndexError:
+Exit:Tloc
