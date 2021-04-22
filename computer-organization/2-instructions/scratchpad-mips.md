@@ -48,6 +48,7 @@ Loop:beq $s0,$s1,Exit
 addi $s0,$s0,1
 j Loop
 Exit:
+```
 
 5
 
